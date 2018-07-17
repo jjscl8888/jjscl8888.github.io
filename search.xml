@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Markdown基本语法]]></title>
+    <url>%2F2018%2F07%2F17%2FMarkdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[基本语法（0）特殊字符 （1）标题 # 表示标题等级1）大标题 在本行下面加 ==2）小标题 在本行下加 -- （2）加粗和倾斜文本 使用一对,在中间插入 文本使用两队**,在中间插入 （3）链接 （4）列表测试： &gt;应用 &gt;仍需要 &gt; 前面 （5）引用 （6）图片 （7） 换行 （8）分隔符 （9）小型文本 （10）注释 （11） 表格]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown图片导入hexo问题]]></title>
+    <url>%2F2018%2F07%2F17%2FMarkdown%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5hexo%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1 首先确认_config.yml 中有 post_asset_folder:true。Hexo 提供了一种更方便管理 Asset 的设定：post_asset_folder当您设置post_asset_folder为true参数后，在建立文件时，Hexo会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，如此一来，您便可以更方便的使用资源。 2 在hexo的目录下执行npm install https://github.com/CodeFalling/hexo-asset-image –save（需要等待一段时间）。3 完成安装后用hexo新建文章的时候会发现_posts目录下面会多出一个和文章名字一样的文件夹。图片就可以放在文件夹下面。结构如下： 注意]]></content>
+  </entry>
+</search>
