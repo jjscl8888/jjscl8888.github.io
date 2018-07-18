@@ -1,43 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>项目1_网络爬虫_单线程版本</title>
-      <link href="/2018/07/17/%E9%A1%B9%E7%9B%AE1_%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB_%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%89%88%E6%9C%AC/"/>
-      <url>/2018/07/17/%E9%A1%B9%E7%9B%AE1_%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB_%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%89%88%E6%9C%AC/</url>
-      <content type="html"><![CDATA[<h1 id="一、基本框架（bfs）"><a href="#一、基本框架（bfs）" class="headerlink" title="一、基本框架（bfs）"></a>一、基本框架（bfs）</h1><ul><li>url地址分解  </li><li>建立连接并获得资源  </li><li>对资源解析获得图片url和其他链接url  </li><li>图片下载  </li><li>重复以上过程  </li></ul><hr><h1 id="二、详细解析过程"><a href="#二、详细解析过程" class="headerlink" title="二、详细解析过程"></a>二、详细解析过程</h1><h2 id="1）url地址解析-–获得服务器地址和资源位置"><a href="#1）url地址解析-–获得服务器地址和资源位置" class="headerlink" title="1）url地址解析 –获得服务器地址和资源位置"></a>1）url地址解析 –获得服务器地址和资源位置</h2><pre><code>bool ParseUrl(const string url,string &amp;host,string &amp;resoure)  </code></pre><ul><li>url表示传入的网址</li><li>host为服务器的网址，resource为要得到的资源名  <h3 id="1-1-主要代码"><a href="#1-1-主要代码" class="headerlink" title="1.1)主要代码"></a>1.1)主要代码</h3><img src="~/10-26-16.jpg" alt=""><br>其中，const char* strstr(str1,str2)该函数将返回str2在str1的开头位置，如果没有返回NULL;strlen(str)返回str中字符个数，该函数必须字串以’\0’结尾，且字符计数不含有它；sscanf(src,”格式”，dst1,dst2)将字串按照一定格式将存入dst1和dst2中。<h2 id="2）建立连接并获得资源—–获得网页内容"><a href="#2）建立连接并获得资源—–获得网页内容" class="headerlink" title="2）建立连接并获得资源—–获得网页内容"></a>2）建立连接并获得资源—–获得网页内容</h2><pre><code>bool GetHtml(string&amp; host,string&amp; resource,char*&amp; data,long long size)   </code></pre></li><li>host为主机地址，resource为资源位置</li><li>data为得到的html数据，size为获得响应数据大小  <h3 id="2-1）主要代码"><a href="#2-1）主要代码" class="headerlink" title="2.1）主要代码"></a>2.1）主要代码</h3><img src="~/10-46-22.jpg" alt=""><br><img src="~/10-47-13.jpg" alt=""><br><img src="~/10-49-35.jpg" alt=""><br>其中，struct hostent* gethostbyname(url)进行域名解析得到含有ip的结构体。<br><strong>注意</strong> 最后别忘了free(data),避免造成内存泄漏。<h3 id="2-2）http相关协议"><a href="#2-2）http相关协议" class="headerlink" title="2.2）http相关协议"></a>2.2）http相关协议</h3></li><li>由于该爬虫项目中只用到GET的请求，只是简单介绍相关内容<br>请求资源 ：<br>GET + “资源地址” +http版本信息\r\nhost: + “主机名”\r\nconnection: closed\r\n\r\n<br><strong>注意</strong> 结束处含有两个\r\n，表示请求头部信息结束</li><li>得到的响应<br>响应：<br>协议版本 + 200 + OK\r\n…\r\n\r\n + html内容<br><strong>注意</strong> 请求资源在\r\n\r\n 之后</li><li>其他<a href="https://blog.csdn.net/kingcodexl/article/details/51306062" target="_blank" rel="noopener">http协议</a>点击浏览。<h2 id="3）对资源解析—-获得图片url和其他链接url"><a href="#3）对资源解析—-获得图片url和其他链接url" class="headerlink" title="3）对资源解析—-获得图片url和其他链接url"></a>3）对资源解析—-获得图片url和其他链接url</h2>  void ParseHtml(char* &amp;data);  </li><li>data为得到的响应内容。<h3 id="3-1）注意代码"><a href="#3-1）注意代码" class="headerlink" title="3.1）注意代码"></a>3.1）注意代码</h3><img src="~/11-09-35.jpg" alt=""><br><img src="~/11-09-16.jpg" alt=""><br>其中，使用到sprintf()和sscanf()函数相反使用。<h3 id="3-1）html编码内容"><a href="#3-1）html编码内容" class="headerlink" title="3.1）html编码内容"></a>3.1）html编码内容</h3></li><li>图片地址一般位于<img src="\"" url="" \"="">之中。  </li><li>其他链接一般位于&lt;href=\” url \”&gt;之中。<br><strong>注意</strong>  为了防止存入的url地址不重复，我使用了数据库。如果没有预防的话可能无限死循环。<h2 id="4）图片下载"><a href="#4）图片下载" class="headerlink" title="4）图片下载"></a>4）图片下载</h2>  void Download();  <h3 id="4-1-主要代码"><a href="#4-1-主要代码" class="headerlink" title="4.1)主要代码"></a>4.1)主要代码</h3><img src="~/11-20-55.jpg" alt=""><br>其中，使用了文件相关操作。</li><li>调用了ParseUrl和GetHtml函数</li><li>图片的内容保存在\r\n\r\n之后，且为二进制。</li></ul><hr><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><pre><code>1） 了解广度遍历思想；2） 回顾文件、网络、字串处理、MySQL、http、html等相关知识。</code></pre>]]></content>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>学习网站</title>
-      <link href="/2018/07/17/%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/"/>
-      <url>/2018/07/17/%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/</url>
-      <content type="html"><![CDATA[<p>(1)1111<br><img src="~/14-27-17.jpg" alt=""><br><img src="~/2.jpg" alt=""></p>]]></content>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Markdown基本语法</title>
-      <link href="/2018/07/17/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
-      <url>/2018/07/17/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
-      <content type="html"><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="（0）特殊字符"><a href="#（0）特殊字符" class="headerlink" title="（0）特殊字符"></a>（0）特殊字符</h2><p><img src="~/14-40-46.jpg" alt=""></p><h2 id="（1）标题"><a href="#（1）标题" class="headerlink" title="（1）标题"></a>（1）标题</h2><p> # 表示标题等级<br>1）大标题 在本行下面加 =<br>=<br>2）小标题 在本行下加 -<br>-</p><h2 id="（2）加粗和倾斜"><a href="#（2）加粗和倾斜" class="headerlink" title="（2）加粗和倾斜"></a>（2）加粗和倾斜</h2><p><em>文本</em><br>  使用一对<strong>,在中间插入</strong>文本<strong><br>使用两队**</strong>,在中间插入</p><h2 id="（3）链接"><a href="#（3）链接" class="headerlink" title="（3）链接"></a>（3）链接</h2><p><img src="~/14-49-29.jpg" alt=""><br><img src="~/14-50-33.jpg" alt=""></p><h2 id="（4）列表"><a href="#（4）列表" class="headerlink" title="（4）列表"></a>（4）列表</h2><p><img src="~/14-51-08.jpg" alt=""><br><img src="~/14-51-23.jpg" alt=""><br>测试：</p><pre><code>&gt;应用&gt;仍需要 &gt;       前面</code></pre><h2 id="（5）引用"><a href="#（5）引用" class="headerlink" title="（5）引用"></a>（5）引用</h2><p><img src="~/14-55-16.jpg" alt=""><br><img src="~/14-55-40.jpg" alt=""><br><img src="~/14-56-08.jpg" alt=""></p><h2 id="（6）图片"><a href="#（6）图片" class="headerlink" title="（6）图片"></a>（6）图片</h2><p><img src="~/14-56-39.jpg" alt=""><br><img src="2.jpg" alt="图片"></p><h2 id="（7）-换行"><a href="#（7）-换行" class="headerlink" title="（7） 换行"></a>（7） 换行</h2><p><img src="~/14-57-28.jpg" alt=""></p><h2 id="（8）分隔符"><a href="#（8）分隔符" class="headerlink" title="（8）分隔符"></a>（8）分隔符</h2><p><img src="~/14-58-05.jpg" alt=""></p><hr><h2 id="（9）小型文本"><a href="#（9）小型文本" class="headerlink" title="（9）小型文本"></a>（9）小型文本</h2><p><img src="~/15-01-21.jpg" alt=""></p><h2 id="（10）注释"><a href="#（10）注释" class="headerlink" title="（10）注释"></a>（10）注释</h2><p><img src="~/15-02-17.jpg" alt=""></p><h2 id="（11）-表格"><a href="#（11）-表格" class="headerlink" title="（11） 表格"></a>（11） 表格</h2><p><img src="~/15-02-43.jpg" alt=""></p>]]></content>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Markdown图片导入hexo问题</title>
-      <link href="/2018/07/17/Markdown%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5hexo%E9%97%AE%E9%A2%98/"/>
-      <url>/2018/07/17/Markdown%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5hexo%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<h2 id="1-首先确认-config-yml-中有-post-asset-folder-true。"><a href="#1-首先确认-config-yml-中有-post-asset-folder-true。" class="headerlink" title="1 首先确认_config.yml 中有 post_asset_folder:true。"></a>1 首先确认_config.yml 中有 post_asset_folder:true。</h2><p>Hexo 提供了一种更方便管理 Asset 的设定：post_asset_folder<br>当您设置post_asset_folder为true参数后，在建立文件时，Hexo<br>会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，如此一来，您便可以更方便的使用资源。</p><h2 id="2-在hexo的目录下执行npm-install-https-github-com-CodeFalling-hexo-asset-image-–save（需要等待一段时间）。"><a href="#2-在hexo的目录下执行npm-install-https-github-com-CodeFalling-hexo-asset-image-–save（需要等待一段时间）。" class="headerlink" title="2 在hexo的目录下执行npm install https://github.com/CodeFalling/hexo-asset-image –save（需要等待一段时间）。"></a>2 在hexo的目录下执行npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">https://github.com/CodeFalling/hexo-asset-image</a> –save（需要等待一段时间）。</h2><h2 id="3-完成安装后用hexo新建文章的时候会发现-posts目录下面会多出一个和文章名字一样的文件夹。图片就可以放在文件夹下面。结构如下："><a href="#3-完成安装后用hexo新建文章的时候会发现-posts目录下面会多出一个和文章名字一样的文件夹。图片就可以放在文件夹下面。结构如下：" class="headerlink" title="3 完成安装后用hexo新建文章的时候会发现_posts目录下面会多出一个和文章名字一样的文件夹。图片就可以放在文件夹下面。结构如下："></a>3 完成安装后用hexo新建文章的时候会发现_posts目录下面会多出一个和文章名字一样的文件夹。图片就可以放在文件夹下面。结构如下：</h2><p><img src="~/08-40-38.jpg" alt=""></p><h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p><img src="~/08-43-27.jpg" alt=""></p>]]></content>
-      
-      
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[项目1_网络爬虫_单线程版本]]></title>
+    <url>%2F2018%2F07%2F17%2F%E9%A1%B9%E7%9B%AE1_%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB_%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%89%88%E6%9C%AC%2F</url>
+    <content type="text"><![CDATA[一、基本框架（bfs） url地址分解 建立连接并获得资源 对资源解析获得图片url和其他链接url 图片下载 重复以上过程 二、详细解析过程1）url地址解析 –获得服务器地址和资源位置bool ParseUrl(const string url,string &amp;host,string &amp;resoure) url表示传入的网址 host为服务器的网址，resource为要得到的资源名 1.1)主要代码其中，const char* strstr(str1,str2)该函数将返回str2在str1的开头位置，如果没有返回NULL;strlen(str)返回str中字符个数，该函数必须字串以’\0’结尾，且字符计数不含有它；sscanf(src,”格式”，dst1,dst2)将字串按照一定格式将存入dst1和dst2中。2）建立连接并获得资源—–获得网页内容bool GetHtml(string&amp; host,string&amp; resource,char*&amp; data,long long size) host为主机地址，resource为资源位置 data为得到的html数据，size为获得响应数据大小 2.1）主要代码其中，struct hostent* gethostbyname(url)进行域名解析得到含有ip的结构体。注意 最后别忘了free(data),避免造成内存泄漏。2.2）http相关协议 由于该爬虫项目中只用到GET的请求，只是简单介绍相关内容请求资源 ：GET + “资源地址” +http版本信息\r\nhost: + “主机名”\r\nconnection: closed\r\n\r\n注意 结束处含有两个\r\n，表示请求头部信息结束 得到的响应响应：协议版本 + 200 + OK\r\n…\r\n\r\n + html内容注意 请求资源在\r\n\r\n 之后 其他http协议点击浏览。3）对资源解析—-获得图片url和其他链接url void ParseHtml(char* &amp;data); data为得到的响应内容。3.1）注意代码其中，使用到sprintf()和sscanf()函数相反使用。3.1）html编码内容 图片地址一般位于之中。 其他链接一般位于&lt;href=\” url \”&gt;之中。注意 为了防止存入的url地址不重复，我使用了数据库。如果没有预防的话可能无限死循环。4）图片下载 void Download(); 4.1)主要代码其中，使用了文件相关操作。 调用了ParseUrl和GetHtml函数 图片的内容保存在\r\n\r\n之后，且为二进制。 总结1） 了解广度遍历思想； 2） 回顾文件、网络、字串处理、MySQL、http、html等相关知识。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown基本语法]]></title>
+    <url>%2F2018%2F07%2F17%2FMarkdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[基本语法（0）特殊字符 （1）标题 # 表示标题等级1）大标题 在本行下面加 ==2）小标题 在本行下加 -- （2）加粗和倾斜文本 使用一对,在中间插入 文本使用两队**,在中间插入 （3）链接 （4）列表测试： &gt;应用 &gt;仍需要 &gt; 前面 （5）引用 （6）图片 （7） 换行 （8）分隔符 （9）小型文本 （10）注释 （11） 表格]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown图片导入hexo问题]]></title>
+    <url>%2F2018%2F07%2F17%2FMarkdown%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5hexo%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[1 首先确认_config.yml 中有 post_asset_folder:true。Hexo 提供了一种更方便管理 Asset 的设定：post_asset_folder当您设置post_asset_folder为true参数后，在建立文件时，Hexo会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，如此一来，您便可以更方便的使用资源。 2 在hexo的目录下执行npm install https://github.com/CodeFalling/hexo-asset-image –save（需要等待一段时间）。3 完成安装后用hexo新建文章的时候会发现_posts目录下面会多出一个和文章名字一样的文件夹。图片就可以放在文件夹下面。结构如下： 注意]]></content>
+  </entry>
 </search>
