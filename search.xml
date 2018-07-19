@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[项目1_网络爬虫_单线程版本]]></title>
-    <url>%2F2018%2F07%2F17%2F%E9%A1%B9%E7%9B%AE1_%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB_%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%89%88%E6%9C%AC%2F</url>
-    <content type="text"><![CDATA[一、基本框架（bfs） url地址分解 建立连接并获得资源 对资源解析获得图片url和其他链接url 图片下载 重复以上过程 二、详细解析过程1）url地址解析 –获得服务器地址和资源位置bool ParseUrl(const string url,string &amp;host,string &amp;resoure) url表示传入的网址 host为服务器的网址，resource为要得到的资源名 1.1)主要代码其中，const char* strstr(str1,str2)该函数将返回str2在str1的开头位置，如果没有返回NULL;strlen(str)返回str中字符个数，该函数必须字串以’\0’结尾，且字符计数不含有它；sscanf(src,”格式”，dst1,dst2)将字串按照一定格式将存入dst1和dst2中。2）建立连接并获得资源—–获得网页内容bool GetHtml(string&amp; host,string&amp; resource,char*&amp; data,long long size) host为主机地址，resource为资源位置 data为得到的html数据，size为获得响应数据大小 2.1）主要代码其中，struct hostent* gethostbyname(url)进行域名解析得到含有ip的结构体。注意 最后别忘了free(data),避免造成内存泄漏。2.2）http相关协议 由于该爬虫项目中只用到GET的请求，只是简单介绍相关内容请求资源 ：GET + “资源地址” +http版本信息\r\nhost: + “主机名”\r\nconnection: closed\r\n\r\n注意 结束处含有两个\r\n，表示请求头部信息结束 得到的响应响应：协议版本 + 200 + OK\r\n…\r\n\r\n + html内容注意 请求资源在\r\n\r\n 之后 其他http协议点击浏览。3）对资源解析—-获得图片url和其他链接url void ParseHtml(char* &amp;data); data为得到的响应内容。3.1）注意代码其中，使用到sprintf()和sscanf()函数相反使用。3.1）html编码内容 图片地址一般位于之中。 其他链接一般位于&lt;href=\” url \”&gt;之中。注意 为了防止存入的url地址不重复，我使用了数据库。如果没有预防的话可能无限死循环。4）图片下载 void Download(); 4.1)主要代码其中，使用了文件相关操作。 调用了ParseUrl和GetHtml函数 图片的内容保存在\r\n\r\n之后，且为二进制。 总结1） 了解广度遍历思想； 2） 回顾文件、网络、字串处理、MySQL、http、html等相关知识。]]></content>
-  </entry>
-  <entry>
-    <title><![CDATA[Markdown基本语法]]></title>
-    <url>%2F2018%2F07%2F17%2FMarkdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[基本语法（0）特殊字符 （1）标题 # 表示标题等级1）大标题 在本行下面加 ==2）小标题 在本行下加 -- （2）加粗和倾斜文本 使用一对,在中间插入 文本使用两队**,在中间插入 （3）链接 （4）列表测试： &gt;应用 &gt;仍需要 &gt; 前面 （5）引用 （6）图片 （7） 换行 （8）分隔符 （9）小型文本 （10）注释 （11） 表格]]></content>
+    <title><![CDATA[贪心算法]]></title>
+    <url>%2F2018%2F07%2F18%2F%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[贪心算法保证每次操作都是局部最优的，并且最后得到的结果是全局最优 1）分配饼干代码如下： 2)不重叠区间个数代码如下： 3）投飞镖刺气球类似于区间问题 4）种植花朵代码 5）判断是否是子序列 6）修改一个成为非递减数组 7）股票最大收益]]></content>
+      <tags>
+        <tag>c++</tag>
+        <tag>code</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Markdown图片导入hexo问题]]></title>
