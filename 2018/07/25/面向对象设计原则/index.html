@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="个人博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1 依赖倒置原则 2 开放封闭原则1、扩展开放，对更改封闭。 2、类模块应该是可扩展的，但是不可修改。 3 单一职责原则1、一个类应该仅有一个引起他变化的原因 2、变化的方向隐含着类的责任 4 替换原则1、子类必须能够替换他们的基类 2、继承表达类型抽象 5 接口隔离原则1、不应该强迫客户程序依赖他们不用的方法 2、接口应该小而完备 6 优先使用对象组合，而不是类继承7 封装变化点8 针对接口编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象设计原则">
+<meta property="og:url" content="http://yoursite.com/2018/07/25/面向对象设计原则/index.html">
+<meta property="og:site_name" content="个人博客">
+<meta property="og:description" content="1 依赖倒置原则 2 开放封闭原则1、扩展开放，对更改封闭。 2、类模块应该是可扩展的，但是不可修改。 3 单一职责原则1、一个类应该仅有一个引起他变化的原因 2、变化的方向隐含着类的责任 4 替换原则1、子类必须能够替换他们的基类 2、继承表达类型抽象 5 接口隔离原则1、不应该强迫客户程序依赖他们不用的方法 2、接口应该小而完备 6 优先使用对象组合，而不是类继承7 封装变化点8 针对接口编程">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/22-09-14.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/15-52-57.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-14-49.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-18-21.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-34-51.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-07-26.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-12-53.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-22-19.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-25-18.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-34-35.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-17-40.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-21-56.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-26-36.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-29-35.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-50-39.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-50-49.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-52-13.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-55-52.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/22-07-09.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/22-11-06.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/22-24-01.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-11-45.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-34-04.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-37-05.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-39-38.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-41-17.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-55-16.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-57-29.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-59-32.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/11-12-10.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/11-12-33.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/11-14-37.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/11-19-13.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/11-25-25.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/14-34-07.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/19-57-43.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/19-59-00.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-21-16.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-22-13.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-25-33.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-35-31.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-41-05.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-46-51.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-47-34.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-48-56.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/20-51-18.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-05-08.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-06-35.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-10-00.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-10-36.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-11-44.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-19-55.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-22-59.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-26-09.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-29-40.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/21-32-31.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/09-43-37.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/09-57-07.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/09-57-34.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/09-59-31.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-04-54.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-05-37.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-15-48.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-16-54.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-22-01.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-22-59.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-23-16.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-32-04.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-35-01.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-36-22.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-37-06.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/10-37-40.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/11-00-48.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/11-02-20.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/11-11-12.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/11-12-30.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/14-46-42.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/14-48-10.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/14-52-41.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/15-08-10.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/15-17-37.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/15-23-51.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/15-27-59.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/15-43-12.jpg">
+<meta property="og:updated_time" content="2018-07-28T07:53:09.566Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象设计原则">
+<meta name="twitter:description" content="1 依赖倒置原则 2 开放封闭原则1、扩展开放，对更改封闭。 2、类模块应该是可扩展的，但是不可修改。 3 单一职责原则1、一个类应该仅有一个引起他变化的原因 2、变化的方向隐含着类的责任 4 替换原则1、子类必须能够替换他们的基类 2、继承表达类型抽象 5 接口隔离原则1、不应该强迫客户程序依赖他们不用的方法 2、接口应该小而完备 6 优先使用对象组合，而不是类继承7 封装变化点8 针对接口编程">
+<meta name="twitter:image" content="http://yoursite.com/2018/07/25/面向对象设计原则/22-09-14.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/25/面向对象设计原则/"/>
+
+
+
+
+
+  <title>面向对象设计原则 | 个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+		<a href="https://github.com/jjscl8888"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/commonweal/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/something" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            有料
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/25/面向对象设计原则/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蒋景松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面向对象设计原则</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T22:06:00+08:00">
+                2018-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-依赖倒置原则"><a href="#1-依赖倒置原则" class="headerlink" title="1 依赖倒置原则"></a>1 依赖倒置原则</h1><p><img src="/2018/07/25/面向对象设计原则/22-09-14.jpg" alt=""></p>
+<h1 id="2-开放封闭原则"><a href="#2-开放封闭原则" class="headerlink" title="2 开放封闭原则"></a>2 开放封闭原则</h1><pre><code>1、扩展开放，对更改封闭。
+2、类模块应该是可扩展的，但是不可修改。
+</code></pre><h1 id="3-单一职责原则"><a href="#3-单一职责原则" class="headerlink" title="3 单一职责原则"></a>3 单一职责原则</h1><pre><code>1、一个类应该仅有一个引起他变化的原因
+2、变化的方向隐含着类的责任
+</code></pre><h1 id="4-替换原则"><a href="#4-替换原则" class="headerlink" title="4 替换原则"></a>4 替换原则</h1><pre><code>1、子类必须能够替换他们的基类
+2、继承表达类型抽象
+</code></pre><h1 id="5-接口隔离原则"><a href="#5-接口隔离原则" class="headerlink" title="5 接口隔离原则"></a>5 接口隔离原则</h1><pre><code>1、不应该强迫客户程序依赖他们不用的方法
+2、接口应该小而完备
+</code></pre><h1 id="6-优先使用对象组合，而不是类继承"><a href="#6-优先使用对象组合，而不是类继承" class="headerlink" title="6 优先使用对象组合，而不是类继承"></a>6 优先使用对象组合，而不是类继承</h1><h1 id="7-封装变化点"><a href="#7-封装变化点" class="headerlink" title="7 封装变化点"></a>7 封装变化点</h1><h1 id="8-针对接口编程，而不是针对实现编程"><a href="#8-针对接口编程，而不是针对实现编程" class="headerlink" title="8 针对接口编程，而不是针对实现编程"></a>8 针对接口编程，而不是针对实现编程</h1><hr>
+<h1 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h1><p><img src="/2018/07/25/面向对象设计原则/15-52-57.jpg" alt=""></p>
+<h2 id="1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。"><a href="#1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。" class="headerlink" title="1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。"></a>1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。</h2><p>1）template mode（多线程）<br>    基类已经定义好框架，且调用虚函数，而由子类去实现。不同子类实现不同行为。<br><img src="/2018/07/25/面向对象设计原则/10-14-49.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-18-21.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-34-51.jpg" alt=""><br>    2）策略模式<br><img src="/2018/07/25/面向对象设计原则/20-07-26.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-12-53.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-22-19.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-25-18.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-34-35.jpg" alt=""><br>    3）观察者模式<br><img src="/2018/07/25/面向对象设计原则/21-17-40.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-21-56.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-26-36.jpg" alt=""></p>
+<h2 id="2）“单一职责”模式："><a href="#2）“单一职责”模式：" class="headerlink" title="2）“单一职责”模式："></a>2）“单一职责”模式：</h2><p><img src="/2018/07/25/面向对象设计原则/21-29-35.jpg" alt=""><br>   1）装饰模式<br><img src="/2018/07/25/面向对象设计原则/21-50-39.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-50-49.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-52-13.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-55-52.jpg" alt=""><br><strong>注意</strong><br>    2）桥接模式<br><img src="/2018/07/25/面向对象设计原则/22-07-09.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/22-11-06.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/22-24-01.jpg" alt=""></p>
+<h2 id="3）对象创建模式"><a href="#3）对象创建模式" class="headerlink" title="3）对象创建模式"></a>3）对象创建模式</h2><p><img src="/2018/07/25/面向对象设计原则/10-11-45.jpg" alt=""><br>    1)工厂模式<br><img src="/2018/07/25/面向对象设计原则/10-34-04.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-37-05.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-39-38.jpg" alt=""><br>2）抽象工厂<br><img src="/2018/07/25/面向对象设计原则/10-41-17.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-55-16.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-57-29.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-59-32.jpg" alt=""><br>强调一系列对象之间有相关性。<br>3）原型模式<br><img src="/2018/07/25/面向对象设计原则/11-12-10.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-12-33.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-14-37.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-19-13.jpg" alt=""><br>4）构建器<br><img src="/2018/07/25/面向对象设计原则/11-25-25.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/14-34-07.jpg" alt=""></p>
+<h2 id="4）对象性能模式AA"><a href="#4）对象性能模式AA" class="headerlink" title="4）对象性能模式AA"></a>4）对象性能模式AA</h2><p><img src="/2018/07/25/面向对象设计原则/19-57-43.jpg" alt=""><br>1）单例模式<br><img src="/2018/07/25/面向对象设计原则/19-59-00.jpg" alt=""><br>双检查锁设计—由于读写reorder不安全（出问题）<br>instance=new Singleton();执行包含三步：1）分配内存；2）构造函数；3）赋值<br>但是由于cpu可能导致2）和3）步聚相反，导致instance不为null，由此出现问题。<br><img src="/2018/07/25/面向对象设计原则/20-21-16.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-22-13.jpg" alt=""><br>2）享元模式<br><img src="/2018/07/25/面向对象设计原则/20-25-33.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-35-31.jpg" alt=""><br>举例子：字体类型。</p>
+<h2 id="5-接口隔离模式"><a href="#5-接口隔离模式" class="headerlink" title="5 接口隔离模式"></a>5 接口隔离模式</h2><p><img src="/2018/07/25/面向对象设计原则/20-41-05.jpg" alt=""><br>1） 门面模式<br><img src="/2018/07/25/面向对象设计原则/20-46-51.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-47-34.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-48-56.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-51-18.jpg" alt=""><br>2）代理模式<br><img src="/2018/07/25/面向对象设计原则/21-05-08.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-06-35.jpg" alt=""><br>3）适配器模式<br><img src="/2018/07/25/面向对象设计原则/21-10-00.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-10-36.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-11-44.jpg" alt=""><br>适配器继承新的接口，且包含旧的接口<br><img src="/2018/07/25/面向对象设计原则/21-19-55.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-22-59.jpg" alt=""><br>4）中介者模式<br><img src="/2018/07/25/面向对象设计原则/21-26-09.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-29-40.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-32-31.jpg" alt=""></p>
+<h2 id="6-状态变化模式"><a href="#6-状态变化模式" class="headerlink" title="6 状态变化模式"></a>6 状态变化模式</h2><p><img src="/2018/07/25/面向对象设计原则/09-43-37.jpg" alt=""><br>1）状态模式<br><img src="/2018/07/25/面向对象设计原则/09-57-07.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/09-57-34.jpg" alt=""><br>和策略模式很相似。<br><img src="/2018/07/25/面向对象设计原则/09-59-31.jpg" alt=""><br>2）备忘录模式<br><img src="/2018/07/25/面向对象设计原则/10-04-54.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-05-37.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-15-48.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-16-54.jpg" alt=""></p>
+<h2 id="6-数据结构模式"><a href="#6-数据结构模式" class="headerlink" title="6 数据结构模式"></a>6 数据结构模式</h2><p><img src="/2018/07/25/面向对象设计原则/10-22-01.jpg" alt=""><br>1）组合模式<br><img src="/2018/07/25/面向对象设计原则/10-22-59.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-23-16.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-32-04.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-35-01.jpg" alt=""><br>2）迭代器模式<br><img src="/2018/07/25/面向对象设计原则/10-36-22.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-37-06.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-37-40.jpg" alt=""><br>迭代器模式里面含有要遍历的对象，而这个对象类可以返回迭代器类<br>3）职责链模式<br><img src="/2018/07/25/面向对象设计原则/11-00-48.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-02-20.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-11-12.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-12-30.jpg" alt=""></p>
+<h2 id="行为变化模式"><a href="#行为变化模式" class="headerlink" title="行为变化模式"></a>行为变化模式</h2><p><img src="/2018/07/25/面向对象设计原则/14-46-42.jpg" alt=""><br>1）命令模式<br><img src="/2018/07/25/面向对象设计原则/14-48-10.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/14-52-41.jpg" alt=""><br>2）访问者模式<br><img src="/2018/07/25/面向对象设计原则/15-08-10.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/15-17-37.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/15-23-51.jpg" alt=""></p>
+<h2 id="8-领域规则"><a href="#8-领域规则" class="headerlink" title="8 领域规则"></a>8 领域规则</h2><p><img src="/2018/07/25/面向对象设计原则/15-27-59.jpg" alt=""><br>解释器模式<br><img src="/2018/07/25/面向对象设计原则/15-43-12.jpg" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+	<div>
+	  
+		﻿<div> 
+	 
+		<div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div> 
+	 
+</div> 
+
+
+
+	  
+	</div>
+		
+	<div>
+      
+        ﻿
+
+
+
+      
+	</div>
+		
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="蒋景松 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/22/诺瓦/" rel="next" title="诺瓦">
+                <i class="fa fa-chevron-left"></i> 诺瓦
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/27/类与类之间关系/" rel="prev" title="类与类之间关系">
+                类与类之间关系 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODEzMC8xNDY2MA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+ 
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+		
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog.jpg"
+                alt="蒋景松" />
+            
+              <p class="site-author-name" itemprop="name">蒋景松</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+		
+		 <embed src="//music.163.com/style/swf/widget.swf?sid=413812448&type=2&auto=1&width=320&height=66" width="340" height="86"  allowNetworking="all"></embed>
+			
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jjscl8888" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Jjs_xidian@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/3db6f3b8d398" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="个人简历" target="_blank">个人简历</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-依赖倒置原则"><span class="nav-number">1.</span> <span class="nav-text">1 依赖倒置原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-开放封闭原则"><span class="nav-number">2.</span> <span class="nav-text">2 开放封闭原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-单一职责原则"><span class="nav-number">3.</span> <span class="nav-text">3 单一职责原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-替换原则"><span class="nav-number">4.</span> <span class="nav-text">4 替换原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-接口隔离原则"><span class="nav-number">5.</span> <span class="nav-text">5 接口隔离原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-优先使用对象组合，而不是类继承"><span class="nav-number">6.</span> <span class="nav-text">6 优先使用对象组合，而不是类继承</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-封装变化点"><span class="nav-number">7.</span> <span class="nav-text">7 封装变化点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-针对接口编程，而不是针对实现编程"><span class="nav-number">8.</span> <span class="nav-text">8 针对接口编程，而不是针对实现编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模式"><span class="nav-number">9.</span> <span class="nav-text">模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。"><span class="nav-number">9.1.</span> <span class="nav-text">1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2）“单一职责”模式："><span class="nav-number">9.2.</span> <span class="nav-text">2）“单一职责”模式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3）对象创建模式"><span class="nav-number">9.3.</span> <span class="nav-text">3）对象创建模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4）对象性能模式AA"><span class="nav-number">9.4.</span> <span class="nav-text">4）对象性能模式AA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-接口隔离模式"><span class="nav-number">9.5.</span> <span class="nav-text">5 接口隔离模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-状态变化模式"><span class="nav-number">9.6.</span> <span class="nav-text">6 状态变化模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-数据结构模式"><span class="nav-number">9.7.</span> <span class="nav-text">6 数据结构模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行为变化模式"><span class="nav-number">9.8.</span> <span class="nav-text">行为变化模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-领域规则"><span class="nav-number">9.9.</span> <span class="nav-text">8 领域规则</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蒋景松</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://github.com/jjscl8888">JJSCL</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">
+  主题 -<a>LOVE</a>
+ 
+  </div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-25T08:51:11.629Z</updated>
+  <updated>2018-07-27T08:52:24.597Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>类与类之间关系</title>
+    <link href="http://yoursite.com/2018/07/27/%E7%B1%BB%E4%B8%8E%E7%B1%BB%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB/"/>
+    <id>http://yoursite.com/2018/07/27/类与类之间关系/</id>
+    <published>2018-07-27T08:40:00.000Z</published>
+    <updated>2018-07-27T08:52:24.597Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-继承"><a href="#1-继承" class="headerlink" title="1 继承"></a>1 继承</h1><p>一个类继承另一个类的功能<br><img src="/2018/07/27/类与类之间关系/16-41-57.jpg" alt=""></p><h1 id="2-实现"><a href="#2-实现" class="headerlink" title="2 实现"></a>2 实现</h1><p>一个类实现接口的功能<br><img src="/2018/07/27/类与类之间关系/16-42-51.jpg" alt=""></p><h1 id="3依赖"><a href="#3依赖" class="headerlink" title="3依赖"></a>3依赖</h1><p>一个类使用另一个类<br><img src="/2018/07/27/类与类之间关系/16-44-53.jpg" alt=""></p><h1 id="4关联"><a href="#4关联" class="headerlink" title="4关联"></a>4关联</h1><p>强的依赖关系（包含）<br><img src="/2018/07/27/类与类之间关系/16-46-14.jpg" alt=""></p><h1 id="5-聚合"><a href="#5-聚合" class="headerlink" title="5 聚合"></a>5 聚合</h1><p>是关联关系一种特例，它体现整体以部分关系（可分离）<br><img src="/2018/07/27/类与类之间关系/16-48-14.jpg" alt=""></p><h1 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h1><p>组合是关联一种特例强聚合，表现为整体与部分关系（但是必可分离）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-继承&quot;&gt;&lt;a href=&quot;#1-继承&quot; class=&quot;headerlink&quot; title=&quot;1 继承&quot;&gt;&lt;/a&gt;1 继承&lt;/h1&gt;&lt;p&gt;一个类继承另一个类的功能&lt;br&gt;&lt;img src=&quot;/2018/07/27/类与类之间关系/16-41-57.jpg&quot; al
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象设计原则</title>
+    <link href="http://yoursite.com/2018/07/25/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/"/>
+    <id>http://yoursite.com/2018/07/25/面向对象设计原则/</id>
+    <published>2018-07-25T14:06:00.000Z</published>
+    <updated>2018-07-28T07:53:09.566Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-依赖倒置原则"><a href="#1-依赖倒置原则" class="headerlink" title="1 依赖倒置原则"></a>1 依赖倒置原则</h1><p><img src="/2018/07/25/面向对象设计原则/22-09-14.jpg" alt=""></p><h1 id="2-开放封闭原则"><a href="#2-开放封闭原则" class="headerlink" title="2 开放封闭原则"></a>2 开放封闭原则</h1><pre><code>1、扩展开放，对更改封闭。2、类模块应该是可扩展的，但是不可修改。</code></pre><h1 id="3-单一职责原则"><a href="#3-单一职责原则" class="headerlink" title="3 单一职责原则"></a>3 单一职责原则</h1><pre><code>1、一个类应该仅有一个引起他变化的原因2、变化的方向隐含着类的责任</code></pre><h1 id="4-替换原则"><a href="#4-替换原则" class="headerlink" title="4 替换原则"></a>4 替换原则</h1><pre><code>1、子类必须能够替换他们的基类2、继承表达类型抽象</code></pre><h1 id="5-接口隔离原则"><a href="#5-接口隔离原则" class="headerlink" title="5 接口隔离原则"></a>5 接口隔离原则</h1><pre><code>1、不应该强迫客户程序依赖他们不用的方法2、接口应该小而完备</code></pre><h1 id="6-优先使用对象组合，而不是类继承"><a href="#6-优先使用对象组合，而不是类继承" class="headerlink" title="6 优先使用对象组合，而不是类继承"></a>6 优先使用对象组合，而不是类继承</h1><h1 id="7-封装变化点"><a href="#7-封装变化点" class="headerlink" title="7 封装变化点"></a>7 封装变化点</h1><h1 id="8-针对接口编程，而不是针对实现编程"><a href="#8-针对接口编程，而不是针对实现编程" class="headerlink" title="8 针对接口编程，而不是针对实现编程"></a>8 针对接口编程，而不是针对实现编程</h1><hr><h1 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h1><p><img src="/2018/07/25/面向对象设计原则/15-52-57.jpg" alt=""></p><h2 id="1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。"><a href="#1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。" class="headerlink" title="1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。"></a>1）组件模式–通过晚期绑定，来实现框架与应用程序之间的松耦合，是二者之间协作时常用模式。</h2><p>1）template mode（多线程）<br>    基类已经定义好框架，且调用虚函数，而由子类去实现。不同子类实现不同行为。<br><img src="/2018/07/25/面向对象设计原则/10-14-49.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-18-21.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-34-51.jpg" alt=""><br>    2）策略模式<br><img src="/2018/07/25/面向对象设计原则/20-07-26.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-12-53.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-22-19.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-25-18.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-34-35.jpg" alt=""><br>    3）观察者模式<br><img src="/2018/07/25/面向对象设计原则/21-17-40.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-21-56.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-26-36.jpg" alt=""></p><h2 id="2）“单一职责”模式："><a href="#2）“单一职责”模式：" class="headerlink" title="2）“单一职责”模式："></a>2）“单一职责”模式：</h2><p><img src="/2018/07/25/面向对象设计原则/21-29-35.jpg" alt=""><br>   1）装饰模式<br><img src="/2018/07/25/面向对象设计原则/21-50-39.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-50-49.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-52-13.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-55-52.jpg" alt=""><br><strong>注意</strong><br>    2）桥接模式<br><img src="/2018/07/25/面向对象设计原则/22-07-09.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/22-11-06.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/22-24-01.jpg" alt=""></p><h2 id="3）对象创建模式"><a href="#3）对象创建模式" class="headerlink" title="3）对象创建模式"></a>3）对象创建模式</h2><p><img src="/2018/07/25/面向对象设计原则/10-11-45.jpg" alt=""><br>    1)工厂模式<br><img src="/2018/07/25/面向对象设计原则/10-34-04.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-37-05.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-39-38.jpg" alt=""><br>2）抽象工厂<br><img src="/2018/07/25/面向对象设计原则/10-41-17.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-55-16.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-57-29.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-59-32.jpg" alt=""><br>强调一系列对象之间有相关性。<br>3）原型模式<br><img src="/2018/07/25/面向对象设计原则/11-12-10.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-12-33.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-14-37.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-19-13.jpg" alt=""><br>4）构建器<br><img src="/2018/07/25/面向对象设计原则/11-25-25.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/14-34-07.jpg" alt=""></p><h2 id="4）对象性能模式AA"><a href="#4）对象性能模式AA" class="headerlink" title="4）对象性能模式AA"></a>4）对象性能模式AA</h2><p><img src="/2018/07/25/面向对象设计原则/19-57-43.jpg" alt=""><br>1）单例模式<br><img src="/2018/07/25/面向对象设计原则/19-59-00.jpg" alt=""><br>双检查锁设计—由于读写reorder不安全（出问题）<br>instance=new Singleton();执行包含三步：1）分配内存；2）构造函数；3）赋值<br>但是由于cpu可能导致2）和3）步聚相反，导致instance不为null，由此出现问题。<br><img src="/2018/07/25/面向对象设计原则/20-21-16.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-22-13.jpg" alt=""><br>2）享元模式<br><img src="/2018/07/25/面向对象设计原则/20-25-33.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-35-31.jpg" alt=""><br>举例子：字体类型。</p><h2 id="5-接口隔离模式"><a href="#5-接口隔离模式" class="headerlink" title="5 接口隔离模式"></a>5 接口隔离模式</h2><p><img src="/2018/07/25/面向对象设计原则/20-41-05.jpg" alt=""><br>1） 门面模式<br><img src="/2018/07/25/面向对象设计原则/20-46-51.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-47-34.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-48-56.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/20-51-18.jpg" alt=""><br>2）代理模式<br><img src="/2018/07/25/面向对象设计原则/21-05-08.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-06-35.jpg" alt=""><br>3）适配器模式<br><img src="/2018/07/25/面向对象设计原则/21-10-00.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-10-36.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-11-44.jpg" alt=""><br>适配器继承新的接口，且包含旧的接口<br><img src="/2018/07/25/面向对象设计原则/21-19-55.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-22-59.jpg" alt=""><br>4）中介者模式<br><img src="/2018/07/25/面向对象设计原则/21-26-09.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-29-40.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/21-32-31.jpg" alt=""></p><h2 id="6-状态变化模式"><a href="#6-状态变化模式" class="headerlink" title="6 状态变化模式"></a>6 状态变化模式</h2><p><img src="/2018/07/25/面向对象设计原则/09-43-37.jpg" alt=""><br>1）状态模式<br><img src="/2018/07/25/面向对象设计原则/09-57-07.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/09-57-34.jpg" alt=""><br>和策略模式很相似。<br><img src="/2018/07/25/面向对象设计原则/09-59-31.jpg" alt=""><br>2）备忘录模式<br><img src="/2018/07/25/面向对象设计原则/10-04-54.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-05-37.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-15-48.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-16-54.jpg" alt=""></p><h2 id="6-数据结构模式"><a href="#6-数据结构模式" class="headerlink" title="6 数据结构模式"></a>6 数据结构模式</h2><p><img src="/2018/07/25/面向对象设计原则/10-22-01.jpg" alt=""><br>1）组合模式<br><img src="/2018/07/25/面向对象设计原则/10-22-59.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-23-16.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-32-04.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-35-01.jpg" alt=""><br>2）迭代器模式<br><img src="/2018/07/25/面向对象设计原则/10-36-22.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-37-06.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/10-37-40.jpg" alt=""><br>迭代器模式里面含有要遍历的对象，而这个对象类可以返回迭代器类<br>3）职责链模式<br><img src="/2018/07/25/面向对象设计原则/11-00-48.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-02-20.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-11-12.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/11-12-30.jpg" alt=""></p><h2 id="行为变化模式"><a href="#行为变化模式" class="headerlink" title="行为变化模式"></a>行为变化模式</h2><p><img src="/2018/07/25/面向对象设计原则/14-46-42.jpg" alt=""><br>1）命令模式<br><img src="/2018/07/25/面向对象设计原则/14-48-10.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/14-52-41.jpg" alt=""><br>2）访问者模式<br><img src="/2018/07/25/面向对象设计原则/15-08-10.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/15-17-37.jpg" alt=""><br><img src="/2018/07/25/面向对象设计原则/15-23-51.jpg" alt=""></p><h2 id="8-领域规则"><a href="#8-领域规则" class="headerlink" title="8 领域规则"></a>8 领域规则</h2><p><img src="/2018/07/25/面向对象设计原则/15-27-59.jpg" alt=""><br>解释器模式<br><img src="/2018/07/25/面向对象设计原则/15-43-12.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-依赖倒置原则&quot;&gt;&lt;a href=&quot;#1-依赖倒置原则&quot; class=&quot;headerlink&quot; title=&quot;1 依赖倒置原则&quot;&gt;&lt;/a&gt;1 依赖倒置原则&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2018/07/25/面向对象设计原则/22-09-14.jpg&quot; a
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>诺瓦</title>
@@ -66,6 +108,31 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式</title>
+    <link href="http://yoursite.com/2018/07/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://yoursite.com/2018/07/19/设计模式/</id>
+    <published>2018-07-19T12:17:00.000Z</published>
+    <updated>2018-07-28T08:28:39.541Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、总计"><a href="#一、总计" class="headerlink" title="一、总计"></a>一、总计</h1><p><img src="/2018/07/19/设计模式/15-57-24.jpg" alt=""><br>基本都是第三种情况。<br><img src="/2018/07/19/设计模式/16-04-42.jpg" alt=""></p><h1 id="二、设计模式"><a href="#二、设计模式" class="headerlink" title="二、设计模式"></a>二、设计模式</h1><p><a href="https://www.cnblogs.com/wanggary/category/294620.html" target="_blank" rel="noopener">设计模式</a></p><h2 id="1）策略模式"><a href="#1）策略模式" class="headerlink" title="1）策略模式"></a>1）策略模式</h2><p><img src="/2018/07/19/设计模式/20-32-01.jpg" alt=""><br>属于对象行为模式,该模式可用于对于解决同一问题而采用不同方法的模式。</p><hr><h2 id="2）代理模式"><a href="#2）代理模式" class="headerlink" title="2）代理模式"></a>2）代理模式</h2><p><img src="/2018/07/19/设计模式/20-58-33.jpg" alt=""><br>属于结构型模式，和策略模式相似。代理模式知道被代理人的函数，所以继承接口。</p><hr><h2 id="3）单例模式"><a href="#3）单例模式" class="headerlink" title="3）单例模式"></a>3）单例模式</h2><p><img src="/2018/07/19/设计模式/21-03-44.jpg" alt=""></p><h3 id="3-1-线程安全部分代码"><a href="#3-1-线程安全部分代码" class="headerlink" title="3.1)线程安全部分代码"></a>3.1)线程安全部分代码</h3><p><img src="/2018/07/19/设计模式/21-17-25.jpg" alt=""><br><img src="/2018/07/19/设计模式/21-17-35.jpg" alt=""><br><strong>注意</strong> 双检锁也是有问题。<br><img src="/2018/07/19/设计模式/21-18-57.jpg" alt=""></p><h2 id="3-2）应用场景"><a href="#3-2）应用场景" class="headerlink" title="3.2）应用场景"></a>3.2）应用场景</h2><pre><code>任务管理器、回收站、日志应用、web应用的配置对象、数据库连接池、总结：1、资源共享情况下，避免由于资源操作时导致的性能或损耗等      2、控制资源情况下，方便资源之间的相互通信。</code></pre><hr><h2 id="4）工厂模式"><a href="#4）工厂模式" class="headerlink" title="4）工厂模式"></a>4）工厂模式</h2><p><img src="/2018/07/19/设计模式/22-55-10.jpg" alt=""><br>属于创建模式</p><hr><h2 id="5）观察者模式"><a href="#5）观察者模式" class="headerlink" title="5）观察者模式"></a>5）观察者模式</h2><p><img src="/2018/07/19/设计模式/22-58-12.jpg" alt=""><br>属于行为模式–类似于qt的信号与槽</p><hr><h2 id="6）组合模式"><a href="#6）组合模式" class="headerlink" title="6）组合模式"></a>6）组合模式</h2><p><img src="/2018/07/19/设计模式/22-59-58.jpg" alt=""><br>整体与部分关系</p><h2 id="7）迭代器模式"><a href="#7）迭代器模式" class="headerlink" title="7）迭代器模式"></a>7）迭代器模式</h2><p><img src="/2018/07/19/设计模式/20-11-53.jpg" alt=""><br><img src="/2018/07/19/设计模式/20-13-05.jpg" alt=""></p><h2 id="8-命令模式"><a href="#8-命令模式" class="headerlink" title="8)命令模式"></a>8)命令模式</h2><p><img src="/2018/07/19/设计模式/20-56-52.jpg" alt=""></p><h2 id="9）门面模式"><a href="#9）门面模式" class="headerlink" title="9）门面模式"></a>9）门面模式</h2><pre><code>1、为子系统中的一组接口提供一致界面，face定义了高层接口，这个接口使得子系统更加容易使用。将复杂逻辑封装起来，对外公布简单接口，由客户程序调用。    </code></pre><p><img src="/2018/07/19/设计模式/21-49-56.jpg" alt=""></p><h2 id="10）抽象工厂模式"><a href="#10）抽象工厂模式" class="headerlink" title="10）抽象工厂模式"></a>10）抽象工厂模式</h2><p><img src="/2018/07/19/设计模式/22-22-03.jpg" alt=""><br>因为人的这些特性，这三种人都有而且</p><h2 id="11）适配器模式"><a href="#11）适配器模式" class="headerlink" title="11）适配器模式"></a>11）适配器模式</h2><p><img src="/2018/07/19/设计模式/22-28-26.jpg" alt=""><br>将继承新的接口而包含老的接口。</p><h2 id="12）模版模式"><a href="#12）模版模式" class="headerlink" title="12）模版模式"></a>12）模版模式</h2><p>模板模式是定义一个操作中的算法的骨架，而将一些步聚延迟到子类中。该类作用：可以使得子类可以不改变一个算法结构即可重定义该算法某些特定步聚。<br><img src="/2018/07/19/设计模式/08-48-45.jpg" alt=""></p><h2 id="13）建造者模式"><a href="#13）建造者模式" class="headerlink" title="13）建造者模式"></a>13）建造者模式</h2><p>将复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示<br><img src="/2018/07/19/设计模式/09-16-41.jpg" alt=""></p><h2 id="14）桥梁模式"><a href="#14）桥梁模式" class="headerlink" title="14）桥梁模式"></a>14）桥梁模式</h2><p>将抽象与它的实现部分分离，使得他们都可以独立变化，实现分离就得增加一个类<br><img src="/2018/07/19/设计模式/09-24-31.jpg" alt=""></p><h2 id="15）装饰模式"><a href="#15）装饰模式" class="headerlink" title="15）装饰模式"></a>15）装饰模式</h2><p>动态地给一个对象增加额外的职责<br><img src="/2018/07/19/设计模式/09-39-40.jpg" alt=""><br>装饰类即继承基类又包含基类。</p><h2 id="15）职责链模式"><a href="#15）职责链模式" class="headerlink" title="15）职责链模式"></a>15）职责链模式</h2><p>使得多个对象有机会处理请求，从而避免请求发送着和接受者之间耦合关系，将这些对象连城一条链，并沿着这条链传递该请求，直到一个对象处理它为止。<br><img src="/2018/07/19/设计模式/11-34-35.jpg" alt=""></p><h2 id="16）状态模式"><a href="#16）状态模式" class="headerlink" title="16）状态模式"></a>16）状态模式</h2><p>允许一个对象在其内部状态改变时改变它的行为。<br><img src="/2018/07/19/设计模式/11-40-26.jpg" alt=""></p><h2 id="17）访问者模式"><a href="#17）访问者模式" class="headerlink" title="17）访问者模式"></a>17）访问者模式</h2><p>表示一个作用于某个对象结构中的各个元素的操作。<br><img src="/2018/07/19/设计模式/16-28-37.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一、总计&quot;&gt;&lt;a href=&quot;#一、总计&quot; class=&quot;headerlink&quot; title=&quot;一、总计&quot;&gt;&lt;/a&gt;一、总计&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2018/07/19/设计模式/15-57-24.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;基本都是第三种情况。
+      
+    
+    </summary>
+    
+      <category term="-c++" scheme="http://yoursite.com/categories/c/"/>
+    
+    
+      <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
